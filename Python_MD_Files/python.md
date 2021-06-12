@@ -269,9 +269,197 @@ print(a >= b) # False
 ```python
 #공백 ' '은 아스키 코드값 32
 #숫자 0은 아스키 코드값 48
-#알파벳 소문자 a는 아스키 코드값 65
-#알파벳 대문자 A는 아스키 코드값 97에 해당한다.
+#알파벳 대문자 A는 아스키 코드값 65
+#알파벳 대문자 a는 아스키 코드값 97에 해당한다.
 ```
 
 문자의 크기는 공백 < 숫자 < 알파벳 대문자 < 알파벳 소문자이다.
+
+
+
+###### if~else, elif문
+
+```python
+# 예제 1
+if 논리비교:
+    #논리비교가 True라면 이곳을 실행한다.
+
+# 예제 2
+if 논리비교:
+    #논리비교가 True라면 이곳을 실행하고,
+else:
+    #논리비교가 False라면 이곳을 실행한다.
+```
+
+
+
+###### 0과 빈 문자열("")
+
+0과 빈 문자열 `("")`은 모두 False로 취급 된다.
+
+```python
+if 0:
+    print("True")
+else:
+    print("False") # False 출력 (그냥 0은 False로 취급한다.)
+```
+
+ ```python
+ if 0 == 0:
+     print("True") # True 출력 (비교 연산자는 같으면 True이다.)
+ else:
+     print("False")
+ ```
+
+```python
+if "":
+    print("True")
+else:
+    print("False") # False 출력 (빈 문자열은 False이다.)
+```
+
+
+
+###### None
+
+자바에서는 `null`에 해당하는 값이다.
+
+변수에 값이 아무것도 없다고 명시하는 것이다.
+
+```python
+a = None # a 변수는 아무것도 없다고 명시
+```
+
+```python
+if None:
+    print("True")
+else:
+    print("False") # False 출력 ( None 값도 if문에서 False로 취급된다. )
+```
+
+
+
+###### pass
+
+아무것도 안 하겠다는 뜻이다.
+
+```python
+if a:
+    pass # a가 참일땐 아무것도 안 하고 
+else:
+    print("False") # else문을 실행한다.
+```
+
+
+
+###### 리스트(List) ,튜플(Tuple), 세트(Set), 딕셔너리(Dictionary) [자료구조]
+
+List은 배열(Array)과 같다.
+
+```python
+list = [10, 20, 30, 40, 50]
+print(list) # [10, 20, 30, 40, 50] 출력
+print(list[0]) # 10 출력
+print(list[1]) # 20 출력
+print(list[2]) # 30 출력
+print(list[3]) # 40 출력
+print(list[4]) # 50 출력
+```
+
+인덱스 값으로 리스트의 값을 하나씩 읽어올 수 있는데, 첫 번째 숫자부터 0번 인덱스부터 시작한다.
+
+사이즈가 5인 리스트는 0번 인덱스부터 사이즈-1인 4번 인덱스까지 존재하게 된다.
+
+
+
+리스트는 맨 뒤에서부터 접근할 수도 있다. 맨 뒤에서부터 -1이다.
+
+``` python
+list = [10, 20, 30, 40, 50]
+print(list[-1]) # 50 출력
+print(list[-2]) # 40 출력
+print(list[-3]) # 30 출력
+print(list[-4]) # 20 출력
+print(list[-5]) # 10 출력
+```
+
+###### 
+
+###### 리스트의 길이 구하기
+
+```python
+list = [10, 20, 30]
+print(len(list)) # 3 출력
+```
+
+
+
+###### 리스트 슬라이싱
+
+```python
+list = [10, 20, 30, 40, 50]
+print(list[0:3]) # 0부터 2번 인덱스까지 10, 20, 30 출력
+print(list[3:]) # 3부터 끝까지 40, 50 출력
+print(list[:3]) # 0부터 2까지 10, 20, 30 출력
+```
+
+
+
+###### 리스트의 append()와 insert()
+
+```python
+list = [10, 20, 30]
+list.append(40) # append는 맨 뒤에 추가한다.
+print(list) # [10, 20, 30, 40] 출력
+
+list = [10, 20, 30]
+list.insert(1, 15) # 1번 인덱스에 15추가
+print(list)  # [10, 15, 20, 30] 출력
+```
+
+
+
+###### 리스트의 extend()
+
+```python
+a = [10, 20, 30]
+b = ['a', 'b', 'c']
+
+print(a + b) # [10, 20, 30, 'a', 'b', 'c'] 출력
+#하지만 a리스트와 b리스트의 값은 변하지 않는다.
+
+a.extend(b)
+print(a) # a리스트에 b가 합쳐져서 출력된다.
+# [10, 20, 30, 'a', 'b', 'c']
+```
+
+
+
+###### 리스트의 remove()와 del list[index], clear()
+
+```python
+list = [10, 20, 30]
+#30이라는 값을 지우려면
+del list[2] # 2번 인덱스에 해당하는 30을 지운다.
+
+list = [10, 20, 30]
+list.remove(30) #리스트에서 30을 찾아서 지운다.
+
+list = [10, 20, 30]
+list.clear() # 빈 리스트로 만든다.
+```
+
+
+
+###### 리스트의 pop()
+
+```python
+stack = [10, 20, 30]
+item = stack.pop() # 맨 뒤에 있는 30을 꺼내고 저장한다.
+
+stack = [10, 20, 30]
+item = stack.pop(1) # 1번 인덱스에 해당하는20을 꺼내고 저장한다.
+```
+
+
 
