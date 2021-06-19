@@ -463,3 +463,110 @@ item = stack.pop(1) # 1번 인덱스에 해당하는20을 꺼내고 저장한다
 
 
 
+###### 튜플(Tuple) 자료구조
+
+튜플은 삭제는 가능하지만 `수정은 불가능`하다.
+
+```python
+a = (1) 
+print(type(a)) # int type
+
+a = (1,)
+print(type(a)) # tuple type
+
+
+```
+
+리스트와 동일하게 인덱스로 접근할 수 있다.
+
+튜플 자료구조는 연산이 불가능하다.
+
+
+
+###### 집합(Set) 자료구조
+
+집합 자료구조는 중복을 허용하지 않는다.
+
+순서 상관없이(비 선형구조) 저장된다. (`인덱스`로 접근할 수 없다.)
+
+```python
+a = {1, 2, 3, 0}
+print(a) # 1 2 3 0
+```
+
+합집합: union 또는 |
+
+교집합: intersection 또는 &
+
+차집합: difference 또는 -
+
+
+
+###### 집합에 값 추가, 삭제하기
+
+```python
+a.add(1) # 값 하나 추가하기
+a.update(1, 2, 3) # 값 여러 개 추가하기
+a.remove(1) # 값 제거하기 값이 없으면 KeyError
+a.discard(1) # 값 제거하기 값이 없어도 에러 발생 안 함
+```
+
+
+
+###### 딕셔너리 자료구조
+
+```python
+a = {
+    "name": "Jason",
+    "age": 20
+    "age": 25 # 중복 불가라서 위에 20은 못 쓴다.
+}
+```
+
+key, value 쌍으로 이루어진 자료구조이다.
+
+key는 반드시 문자열이어야 한다.
+
+key는 중복될 수 없다.
+
+```python
+print(a["name"]) # Jason 출력
+```
+
+
+
+###### 딕셔너리 데이터 제거하기
+
+```python
+a = {
+    "name": "Jason",
+    "age": 20
+}
+
+del a["age"] # age 제거
+```
+
+
+
+###### 자료구조별 반복문 사용방법
+
+```python
+for i in List:
+    
+for i in Tuple:
+    
+for i in set:
+    
+for key, value in Dict.items(): # 얘만 특별하다.
+    
+for key in Dict: # 이렇게 사용하면 key만 뽑는다.
+```
+
+
+
+###### 리스트에 딕셔너리 넣어서 사용하기
+
+```python
+list = [{"name":"Json"}, {"name":"Jacob"}]
+```
+
