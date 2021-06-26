@@ -8,7 +8,6 @@ MATH_TOTAL = 1
 ENG_AVG = 2
 MATH_AVG = 3
 
-
 while True:
     name = input("이름: ")
     if name == "":
